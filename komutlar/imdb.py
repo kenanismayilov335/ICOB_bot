@@ -19,7 +19,4 @@ def imdb(client, message):
         else:
             imdb_sonuc += f"{i.text}\n"
 
-    bekle.edit(imdb_sonuc, reply_markup=InlineKeyboardMarkup(
-        [
-            [InlineKeyboardButton("Grubumuza Katılın", url="https://t.me/joinchat/PNPv9RJrHf8F0KlPCaC4-Q")]
-        ]))
+    bekle.edit(imdb_sonuc)
