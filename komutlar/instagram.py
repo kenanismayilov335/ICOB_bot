@@ -56,7 +56,4 @@ def instagram(client, message):
                 By.XPATH, '//*[@id="react-root"]/section/main/div/header/section/ul/li[3]/a/span')))
 
             mesaj1 = "**{}** isimli hesabın:\n\nGönderi sayısı: **{}**\nTakipçi sayısı: **{}**\nTakip sayısı: **{}**".format(hesap_isim_duzen, gonderi.text, takipci.text, takip.text)
-            bekle.edit(mesaj1, reply_markup=InlineKeyboardMarkup(
-                [
-                    [InlineKeyboardButton("Grubumuza Katılın", url="https://t.me/joinchat/PNPv9RJrHf8F0KlPCaC4-Q")]
-                ]))
+            bekle.edit(mesaj1)
