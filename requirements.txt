@@ -1,6 +1,6 @@
 Pyrogram==0.16.0
 pytube3==9.6.4
-requests==2.7.0
+requests==2.20.0
 google_search_client==0.1
 selenium==3.141.0
 beautifulsoup4==4.9.0
