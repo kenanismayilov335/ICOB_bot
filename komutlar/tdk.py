@@ -22,8 +22,5 @@ def tdk(client, message):
             for i in a:
                 mesaj += f"👉 {i['anlam']} \n"
 
-            bekle.edit(mesaj, reply_markup=InlineKeyboardMarkup(
-            [
-                [InlineKeyboardButton("Grubumuza Katılın", url="https://t.me/joinchat/PNPv9RJrHf8F0KlPCaC4-Q")]
-            ]))
+            bekle.edit(mesaj)
             
