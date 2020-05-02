@@ -23,7 +23,4 @@ def doviz(client, message):
 
     bilgi = f"💰Dolar: **{dolar.text}**\n💰Euro: **{euro.text}**\n💰Sterlin: **{sterlin.text}**\n💰Altın: **{altin_satis.text}**"
 
-    bekle.edit(bilgi, parse_mode="Markdown", reply_markup=InlineKeyboardMarkup(
-        [
-            [InlineKeyboardButton("Grubumuza Katılın", url="https://t.me/joinchat/PNPv9RJrHf8F0KlPCaC4-Q")]
-        ]))
+    bekle.edit(bilgi)
