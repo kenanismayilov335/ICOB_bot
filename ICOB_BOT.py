@@ -24,11 +24,14 @@ Komutlarım:\n
 🤖 /imdb 
 🤖 /instagram 
 🤖 /doviz
-🤖 /ban
 🤖 /grub
 🤖 /kullanici
 🤖 /yukle
 🤖 /youtube
+🤖 /ban
+🤖 /unban
+🤖 /mute
+🤖 /unmute
 """
 
     merhaba.edit(mesaj)
