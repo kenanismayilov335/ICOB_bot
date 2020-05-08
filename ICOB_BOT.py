@@ -1,10 +1,10 @@
 from pyrogram import Client, Filters
 
 ICOB_BOT = Client(
-    api_id="",
-    api_hash ="",    
-    session_name = "",                 
-    bot_token = "",
+    api_id="",          #https://my.telegram.org/apps den alabilirsiniz
+    api_hash ="",       #https://my.telegram.org/apps den alabilirsiniz
+    session_name = "",  #Burayı sallayabilirsiniz :D               
+    bot_token = "",     #botfather dan alabilirsiniz.
     plugins=dict(root="komutlar")
 )
 
@@ -32,6 +32,8 @@ Komutlarım:\n
 🤖 /unban
 🤖 /mute
 🤖 /unmute
+🤖 /notlar
+🤖 /not
 """
 
     merhaba.edit(mesaj)
