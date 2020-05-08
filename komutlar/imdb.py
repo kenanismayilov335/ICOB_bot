@@ -2,6 +2,7 @@ from pyrogram import Client, Filters, InlineKeyboardButton, InlineKeyboardMarkup
 import requests
 from bs4 import BeautifulSoup
 
+#bu biraz gereksiz olabilir :D
 
 @Client.on_message(Filters.command(["imdb"], ["/", "."]))
 def imdb(client, message):
