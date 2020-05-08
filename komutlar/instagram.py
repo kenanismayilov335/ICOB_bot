@@ -23,6 +23,9 @@ def instagram(client, message):
     
     else:
         br = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
+        #pc için br'yi aşağıdaki şekilde değiştiriniz.
+        #br1 = webdriver.Chrome(executable_path="chromedriver_yolu")
+
         br.get(f"https://www.instagram.com/{hesap_isim_duzen}/?hl=tr")
 
         wait = WebDriverWait(br, 20)
