@@ -9,9 +9,11 @@ import os
 
 def yukle1(dosya, aciklama, mesaj, message, client):
     br1 = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
+    #pc nizde çalıştıracaksanız br1'i aşağıdaki şekilde değiştiriniz.
+    #br1 = webdriver.Chrome(executable_path="chromedriver_yolu")
     br1.get("https://dosya.co/")
 
-    wait = WebDriverWait(br1, 20)
+    wait = WebDriverWait(br1, 100)
 
     yukle_buton = br1.find_element_by_id("my_file_element")
 
