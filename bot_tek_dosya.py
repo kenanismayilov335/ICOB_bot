@@ -19,20 +19,40 @@ def yardim(client, message):
     mesaj = """
 Ben @i-cob tarafından yazıldım\n
 Komutlarım:
-🤖 /google > Yazdığınız metni google'da arayıp sonuçlarını gösterir.
-🤖 /tdk > Yazdığınız kelimenin TDK'daki anlamlarını gösterir.
-🤖 /imdb > Güncel IMDB yn iyi film listesini verir.
-🤖 /instagram > Yazdığınız kullanıcı isminin hesap bilgilerini gösterir.
-🤖 /doviz > Dolar, Euro, Sterlin ve Altın'ın anlık bilgilerini gösterir.
-🤖 /youtube > 1500mb a kadar youTube videosu indirir
-🤖 /ban > kullanıcıyı banlar(gruplar için)
-🤖 /unban > kullanıcının banını kaldırır(gruplar için)
-🤖 /mute > kullanıcıyı sessize alır(gruplar için)
-🤖 /unmute > kullanıcının sesini açar(gruplar için)
+🤖 /google
+🤖 /tdk
+🤖 /imdb 
+🤖 /admin 
+🤖 /doviz
+🤖 /grub
+🤖 /kullanici
+🤖 /bildir
+🤖 /youtube
+🤖 /iftar
+🤖 /cevir
+🤖 /ban
+🤖 /unban
+🤖 /mute
+🤖 /unmute
+🤖 /notlar
+🤖 /not
     """
     merhaba = message.reply("Merhaba...")
     merhaba.edit(mesaj)
 
+@Client.on_message(Filters.new_chat_members)
+def hosgeldin(client, message):
+    butonlar = [[InlineKeyboardButton("🎉 Grubumuza Katılın", url="https://t.me/icobteam"),
+                 InlineKeyboardButton("📝 Kodlarım", url="https://github.com/izci-py/ICOB_bot")],
+                 [InlineKeyboardButton("📰 Instagram", url="https://www.instagram.com/i.cobvision/?hl=tr")]
+                 ]
+    
+    kullanici = [f"[{i.first_name}](tg://user?id={i.id})" for i in message.new_chat_members]
+    mesaj = f"""Merhaba {"".join(kullanici)}, **{message.chat.title}** grubuna hoşgeldin. Seni aramızda görmekten çok mutlu olduk. 😊"""
+    message.reply(mesaj, reply_markup=InlineKeyboardMarkup(butonlar))
+
+
+    
 
 import requests
 from bs4 import BeautifulSoup
