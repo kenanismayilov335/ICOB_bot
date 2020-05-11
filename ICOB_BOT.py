@@ -22,12 +22,14 @@ Komutlarım:\n
 🤖 /google
 🤖 /tdk
 🤖 /imdb 
-🤖 /instagram 
+🤖 /admin 
 🤖 /doviz
 🤖 /grub
 🤖 /kullanici
-🤖 /yukle
+🤖 /bildir
 🤖 /youtube
+🤖 /iftar
+🤖 /cevir
 🤖 /ban
 🤖 /unban
 🤖 /mute
