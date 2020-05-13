@@ -4,7 +4,7 @@ import datetime
 import pytz
 
 
-@Client.on_message(Filters.command(["iftar"]))
+@Client.on_message(Filters.command(["iftar", "iftar@icob_bot"]))
 def iftar(client, message):
     sozluk = {
         'Artvin': 1, 'Aydın': 2, 'Balıkesir': 3, 'Bartın': 4, 'Batman': 5, 'Bayburt': 6,
@@ -24,7 +24,7 @@ def iftar(client, message):
 
     
     if len(message.text.split()) == 1:
-        message.reply("Lütfen bir il giriniz.")
+        message.reply("""Lütfen komutu "**__/iftar il_ismi__**" şeklinde giriniz.""")
         quit()
     
     elif len(message.text.split()) == 2:
@@ -34,29 +34,23 @@ def iftar(client, message):
 
             ramazan_gun = sayfa["ramazanin_kaci"]
 
-            sabah = sayfa["vakitler"][ramazan_gun - 1]["sabah"]
             aksam = sayfa["vakitler"][ramazan_gun - 1]["aksam"]
             saat = datetime.datetime.now(pytz.timezone("Turkey")).strftime("%H:%M")
 
             aksam_dk = int(aksam.split(":")[0]) * 60 + int(aksam.split(":")[1])
-            sabah_dk = int(sabah.split(":")[0]) * 60 + int(sabah.split(":")[1])
             saat_dk = int(saat.split(":")[0]) * 60 + int(saat.split(":")[1])
 
             iftar = aksam_dk - saat_dk
             iftar = f"{iftar // 60}:{iftar % 60}"
 
-            sahur = sabah_dk - saat_dk
-            sahur = f"{sahur // 60}:{sahur % 60}"
-
-            if "-" in str(sahur):
-                sahur = f"""{24 + int(str(sahur).split(":")[0])}:{60 - int(str(sahur).split(":")[1])}"""
-
             if "-" in str(iftar):
-                iftar = f"""{24 + int(str(iftar).split(":")[0])}:{60 - int(str(iftar).split(":")[1])}"""
+                iftar = f"""Bugünkü iftar vakti **__{str(iftar).split(":")[0].replace("-", "")}__** saat **__{str(iftar).split(":")[1]}__** dakika geçti.\n**__Hayırlı İftarlar Dileriz.😊__**.\n\nSonraki iftar vaktine **__{24 + int(str(iftar).split(":")[0])}__** saat **__{60 - int(str(iftar).split(":")[1])}__** dakika var."""
+                
+            else:
+                iftar = f"""Sonraki iftar vaktine **__{str(iftar).split(":")[0]}__** saat **__{str(iftar).split(":")[1]}__** dakika kaldı. 😊"""
             
-            mesaj = ""
-            mesaj += f"Sahura Kalan Saat : **{sahur}**\n"
-            mesaj += f"İftara Kalan Saat : **{iftar}**"
+            mesaj = f"**__{message.text.split()[1].title()}__** şehrinde ;\n"
+            mesaj += iftar
             message.reply(mesaj)
 
         else:message.reply("Böyle bir il yok")
