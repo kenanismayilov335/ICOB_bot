@@ -44,6 +44,7 @@ Komutlarım:\n
 🤖 /bildir
 🤖 /youtube
 🤖 /iftar
+🤖 /sahur
 🤖 /cevir
 🤖 /ban
 🤖 /unban
