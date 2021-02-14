@@ -24,7 +24,6 @@ Komutlarım:\n
 🤖 /imdb 
 🤖 /admin 
 🤖 /doviz
-🤖 /grub
 🤖 /kullanici
 🤖 /bildir
 🤖 /youtube
