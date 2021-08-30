@@ -14,10 +14,10 @@ import time
 
 
 ICOB_BOT = Client(
-    api_id="",          #https://my.telegram.org/apps den alabilirsiniz
-    api_hash ="",       #https://my.telegram.org/apps den alabilirsiniz
-    session_name = "",  #Burayı sallayabilirsiniz :D               
-    bot_token = "",     #botfather dan alabilirsiniz.
+    api_id="7319490",          #https://my.telegram.org/apps den alabilirsiniz
+    api_hash ="3987ed5fcb72635ca4da8c5e93ec7493",       #https://my.telegram.org/apps den alabilirsiniz
+    session_name = "kenan",  #Burayı sallayabilirsiniz :D               
+    bot_token = "1996020741:AAEHuYNcHjmlURScRqlvLKLtihWhOqW0-ps",     #botfather dan alabilirsiniz.
     plugins=dict(root="komutlar")
 )
 
